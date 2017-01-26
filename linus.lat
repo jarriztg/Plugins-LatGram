@@ -1,0 +1,29 @@
+global funcion crear_imagen(texto1, texto2)
+   en = "https://cdn.meme.am/Instance/Preview?imageID=14821613&generatorTypeID=&panels=&text0="..curl.escape(texto1)
+   si texto2
+      en = en.."&text1="..curl.escape(texto2)
+   fin
+   retornar en
+fin
+
+
+funcion mensajes()
+   si matches[1] == "linus"
+      b = cadena.reemplazar(matches[2], "/", " ")
+      si ! matches[3]
+         a = crear_imagen(b)
+      sino
+         c = cadena.reemplazar(matches[3], "/", " ")
+         a = crear_imagen(b, c)
+      fin
+      enviarFoto(msg.chat.id, a)
+   fin
+fin
+
+retornar {
+   "comandos": [
+      "^/(linus) ([[:alnum:]@_\)\(\/]+)$",
+      "^/(linus) ([[:alnum:]@_\)\(\/]+) ([[:alnum:]@_\)\(\/]+)$"
+   ],
+   "accion": mensajes
+}
