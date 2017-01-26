@@ -1,3 +1,5 @@
+/* https://github.com/jarriztg/Plugins-LatGram */
+
 global funcion crear_imagen(texto1, texto2)
    en = "https://cdn.meme.am/Instance/Preview?imageID=14821613&generatorTypeID=&panels=&text0="..curl.escape(texto1)
    si texto2
