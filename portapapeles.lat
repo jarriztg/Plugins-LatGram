@@ -1,3 +1,5 @@
+/* https://github.com/jarriztg/Plugins-LatGram */
+
 global funcion subproceso_papelera()
    array = obtenerLeer(msg.de.id, msg.texto, 22)
    si array
